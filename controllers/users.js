@@ -72,9 +72,9 @@ const login = (req, res, next) => {
 
 // GET current user
 const getCurrentUser = (req, res, next) => {
-  const userId = req.user._id;
+  const owner = req.user._id;
 
-  User.findById(userId)
+  User.findById(owner)
     .orFail()
     .then((user) => res.send(user))
     .catch((err) => {

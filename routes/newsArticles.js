@@ -1,10 +1,16 @@
 const router = require("express").Router();
-const { saveArticle, getArticles } = require("../controllers/NewsArticles");
+const {
+  saveArticle,
+  getArticles,
+  deleteArticles,
+} = require("../controllers/NewsArticles");
 const auth = require("../middlewares/auth");
 
-router.get("/", getArticles);
+router.get("/", auth, getArticles);
 
-router.post("/", saveArticle);
-router.post("/articles/articleId", () => console.log("POST articels"));
+router.post("/", auth, saveArticle);
+
+// Delete article
+router.delete("/:articleId", auth, deleteArticles);
 
 module.exports = router;

@@ -7,7 +7,6 @@ const newsArticleSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: User,
     required: true,
-    select: false,
   },
   url: {
     type: String,
