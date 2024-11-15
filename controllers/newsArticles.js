@@ -3,6 +3,7 @@ const Article = require("../models/newsArticle");
 
 const saveArticle = (req, res, next) => {
   const owner = req.user._id;
+  console.log(owner);
 
   const { url, urlToImage, title, description, source, publishedAt, keyword } =
     req.body;
