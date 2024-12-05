@@ -1,7 +1,7 @@
 {
   "name": "news-explorer-backend",
   "version": "0.1.0",
-  "description": "",
+  "description": "This backend is created to respond to the request from news-explorer-frontend ",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^6.6.1",

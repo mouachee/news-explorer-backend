@@ -8,6 +8,14 @@ const newsArticleSchema = new mongoose.Schema({
     ref: User,
     required: true,
   },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
   url: {
     type: String,
     required: true,
@@ -18,10 +26,7 @@ const newsArticleSchema = new mongoose.Schema({
       message: "Invalid URL format",
     },
   },
-  title: {
-    type: String,
-    required: true,
-  },
+
   urlToImage: {
     type: String,
     required: true,
@@ -32,10 +37,7 @@ const newsArticleSchema = new mongoose.Schema({
       message: "Invalid image URL format",
     },
   },
-  description: {
-    type: String,
-    required: true,
-  },
+
   source: {
     type: String,
     required: true,
