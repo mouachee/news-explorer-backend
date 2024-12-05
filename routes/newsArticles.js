@@ -3,7 +3,7 @@ const {
   saveArticle,
   getArticles,
   deleteArticles,
-} = require("../controllers/NewsArticles");
+} = require("../controllers/newsArticles");
 const auth = require("../middlewares/auth");
 const {
   validateArticleBody,
