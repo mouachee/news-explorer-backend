@@ -29,7 +29,7 @@ const saveArticle = (req, res, next) => {
     });
 };
 
-//Todo deleteArticle
+// Todo deleteArticle
 const deleteArticles = (req, res, next) => {
   const { articleId } = req.params;
   const owner = req.user._id;
@@ -56,8 +56,6 @@ const getArticles = (req, res, next) => {
 
   Article.find({ owner })
     .then((articles) => res.status(200).send({ data: articles }))
-    .catch((err) => {
-      return next(err);
-    });
+    .catch((err) => next(err));
 };
 module.exports = { saveArticle, getArticles, deleteArticles };

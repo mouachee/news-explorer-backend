@@ -1,6 +1,6 @@
-const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const User = require("../models/user");
 const BadRequestError = require("../errors/BadRequestError");
 const NotFoundError = require("../errors/NotFoundError");
 const ConflictError = require("../errors/ConflictError");
@@ -8,7 +8,7 @@ const UnauthorizedError = require("../errors/UnauthorizedError");
 
 const { JWT_SECRET } = require("../utils/config");
 
-//Sign up
+// Sign up
 const createUser = (req, res, next) => {
   const { name, email, password } = req.body;
 
@@ -16,7 +16,7 @@ const createUser = (req, res, next) => {
     return next(new BadRequestError("Invalid email"));
   }
 
-  return User.findOne({ email }) //check for existing email
+  return User.findOne({ email }) // check for existing email
     .then((existingEmail) => {
       if (existingEmail) {
         const error = new Error("Email already exists");
